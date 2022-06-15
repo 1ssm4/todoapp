@@ -1,8 +1,63 @@
-<p>Are you sure you want to delete "{{item}}"?</p>
+<title>ToDoApp</title>
+<link
+  rel="shortcut icon"
+  type="image/x-icon"
+  href="https://play-lh.googleusercontent.com/HUuQc4Zpl6x7fUyX-jFMmcuUbW77REw4UKl5rfhHfP4VY6ctBU1w1I_RZWsXaojFgIo"
+/>
+<div class="header">
+  <p>Are you sure you want to delete "{{item}}"?</p>
+</div>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
 
-<a href="{% url 'list' %}">Cancel</a>
+<style>
+  body {
+    background-color: #638cb8;
+  }
 
+  .header {
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px 10px;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  input::placeholder {
+    color: #d3d3d3;
+  }
+
+  .center-column {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  .item-row {
+    background-color: #906abd;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    box-shadow: 0px -1px 10px -4px rgba(0, 0, 0, 0.75);
+  }
+</style>
+<div class="header">
+  <div class="btn btn-danger">
+    <a href="{% url 'list' %}">Cancel</a>
+  </div>
+</div>
 <form method="POST" action="">
   {% csrf_token %}
-  <input type="submit" name="Confirm" />
+  <div class="header">
+    <input class="btn btn-success" type="submit" name="Confirm" />
+  </div>
 </form>
